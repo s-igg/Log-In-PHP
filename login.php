@@ -21,14 +21,16 @@ include 'includes/DB.php';
        $db_user = $row['Username'];
        $db_pass = $row['Password'];
     }
+
+    $pass = crypt($pass, $db_pass);
+
     if ($user === $db_user && $pass === $db_pass) {
       $_SESSION['LogIn'] = true;
       $_SESSION['Username'] = $db_user;
-      header("Location: index2.php");
+      header("Location: index.php");
       echo "<div class='notice'>You are in!</div>";
     }
     else {
-
       $_SESSION['LogIn'] = false;
       header("Location: login.php");
       echo "<div class='notice'>Wrong Username/Password ¯\_(ツ)_/¯</div>";
@@ -42,6 +44,7 @@ include 'includes/DB.php';
     <input class="Text" type="text" name="username" placeholder="Username" required>
     <input class="Pass" type="password" name="password" placeholder="Password" required>
     <input class="Submit" type="submit" name="login" value="Log In">
+    <a href="register.php" class="regist">Register here</a>
   </form>
 </body>
 </html>
