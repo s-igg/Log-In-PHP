@@ -1,6 +1,9 @@
 <?php
-include 'includes/DB.php';
-
+  $title= "Log In";
+  include 'includes/header.php';
+  $db_user = '';
+  $db_pass = '';
+  $errorMessage='';
   session_start();
 
   if (isset($_POST['login'])) {
@@ -25,26 +28,25 @@ include 'includes/DB.php';
     $pass = crypt($pass, $db_pass);
 
     if ($user === $db_user && $pass === $db_pass) {
-      $_SESSION['LogIn'] = true;
+      $_SESSION['ID'] = $db_id;
       $_SESSION['Username'] = $db_user;
       header("Location: index.php");
-      echo "<div class='notice'>You are in!</div>";
     }
     else {
-      $_SESSION['LogIn'] = false;
-      header("Location: login.php");
-      echo "<div class='notice'>Wrong Username/Password ¯\_(ツ)_/¯</div>";
+      $errorMessage= "Wrong Username / Password!";
     }
   }
-  $title= "Log In";
-  include 'includes/header.php';
  ?>
-
-  <form class="animated bounceIn" action="login.php" method="post">
+<div  id="login">
+  <form class="animated pulse" action="login.php" method="post">
     <input class="Text" type="text" name="username" placeholder="Username" required>
     <input class="Pass" type="password" name="password" placeholder="Password" required>
     <input class="Submit" type="submit" name="login" value="Log In">
     <a href="register.php" class="regist">Register here</a>
   </form>
+  <?php if($errorMessage): ?>
+  <div id="alert" class="animated flash"><?php echo $errorMessage; ?></div>
+  <?php endif; ?>
+</div>
 </body>
 </html>
