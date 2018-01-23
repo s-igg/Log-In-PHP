@@ -17,9 +17,16 @@
     global $connection;
 
     if (isset($_POST['taskName'])) {
-      echo $taskName = $_POST['taskName'];
+      $title = $_POST['taskName'];
+      $userID = $_SESSION['ID'];
 
-      echo $userID = $_SESSION['ID'];
+      $query = "INSERT INTO tasks(Title, User_ID)";
+      $query .="VALUES('$title', '$userID') ";
+
+      $addTaskQuery = mysqli_query($connection, $query);
+    }
+    else {
+      echo "hi";
     }
   }
  ?>

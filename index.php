@@ -27,9 +27,14 @@ $title = "Welcome";
 <section>
   <h1 class="to-do">Thing needs to do</h1>
   <ul>
-    <li class="list">test1</li>
-    <li class="list">test2</li>
-    <li class="list">test3</li>
+    <?php
+    $query = "SELECT * FROM tasks WHERE User_ID = {$_SESSION['ID']}" ;
+    $result = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_array($result)) {
+      echo "<li class='list'>". $row['Title'] ."</li>";
+    }
+    ?>
   </ul>
   <form action="index.php" method="post">
     <input class="Taskname" type="text" name="taskName">
