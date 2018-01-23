@@ -23,7 +23,6 @@ $title = "Welcome";
 
 
 
-
 <section>
   <h1 class="to-do">Thing needs to do</h1>
   <ul>
@@ -32,7 +31,7 @@ $title = "Welcome";
     $result = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_array($result)) {
-      echo "<li class='list'>". $row['Title'] ."</li>";
+      echo "<li id='list'>". $row['Title'] . "<a href='#' class='fa fa-trash' aria-hidden='true'></a>" . "</li>";
     }
     ?>
   </ul>

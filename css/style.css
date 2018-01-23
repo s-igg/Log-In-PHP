@@ -119,7 +119,7 @@ position: fixed;
   margin: 0 30px;
   padding-bottom: 15px;
 }
-.list{
+#list{
   list-style: circle;
 }
 .Taskname, .Addtask{
