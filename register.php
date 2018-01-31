@@ -1,4 +1,5 @@
 <?php
+  $bodyClass = "d-flex";
   $title= "Register";
   include 'includes/header.php';
 

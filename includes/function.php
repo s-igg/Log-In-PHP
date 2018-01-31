@@ -1,4 +1,6 @@
 <?php
+  $appName = "App";
+
   function userIsExist($user){
     global $connection;
 
@@ -29,4 +31,20 @@
       echo "hi";
     }
   }
+  function removeTask(){
+    global $connection;
+    $taskID = $_POST['taskID'];
+    $query = "DELETE FROM tasks WHERE id = $taskID";
+    $deleteTaskQuery = mysqli_query($connection, $query);
+    header("Location: index.php");
+  }
+  function editTask(){
+    global $connection;
+    $taskID = $_POST['taskID'];
+    $newText = $_POST['newTask'];
+    $query = "UPDATE tasks SET title='$newText' WHERE id = '$taskID'";
+    $updateTaskQuery = mysqli_query($connection, $query);
+    header("location: index.php");
+  }
+
  ?>

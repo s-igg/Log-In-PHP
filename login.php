@@ -1,4 +1,5 @@
 <?php
+  $bodyClass = "d-flex";  
   $title= "Log In";
   include 'includes/header.php';
   $db_user = '';
@@ -38,6 +39,8 @@
   }
  ?>
 <div  id="login">
+  <div class="img animated pulse">
+    <img src="LOGOforApp.svg" alt="">
   <form class="animated pulse" action="login.php" method="post">
     <input class="Text" type="text" name="username" placeholder="Username" required>
     <input class="Pass" type="password" name="password" placeholder="Password" required>
@@ -48,5 +51,7 @@
   <div id="alert" class="animated flash"><?php echo $errorMessage; ?></div>
   <?php endif; ?>
 </div>
+</div>
+
 </body>
 </html>

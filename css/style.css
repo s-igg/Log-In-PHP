@@ -1,141 +1,25 @@
+/*Layout*/
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 @import url('https://fonts.googleapis.com/css?family=Kavivanar');
 
-*{
-  list-style: none;
-  box-sizing: border-box;
-}
-html, body {
+html, body{
   height: 100%;
-  font-family: 'Work Sans', sans-serif;
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-body {
-  margin: 0 auto;
-  overflow: hidden;
-}
-h1{
-  color: #fff;
-}
-form {
-  width: 350px;
-}
-input{
-  display: block;
-  font-size: 20px;
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
+/*-------------------------------------------------------------------------*/
+
+/*Landing page*/
+video{
+  object-fit: cover;
   width: 100%;
-  line-height: 50px;
-  padding: 0 25px;
-}
-a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-nav{
-  height: 10px;
-}
-div#login{
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-section{
-  font-family: 'Kavivanar', cursive;
-  background-color: #ffffff69;
-  margin: 0 auto;
-  padding: 20px;
-  width: 320px;
-}
-.to-do{
-  margin: 0 auto;
-  text-align: center;
-}
-.menu {
-  background-color: #ffffff00;
-  width: 10px;
-  height: 100vh;
-  transition: all 500ms ease-out;
-  margin-left: -40px;
-  margin-top: 0;
-}
-.menu:hover {
-  background-color: #ffffff00;
-  width: 150px;
-  height: 100vh;
-}
-.lil {
-  padding-bottom: 20px;
-  overflow: hidden;
-  text-align: center;
-  padding: 10px 0;
-}
-.lil:hover{
-  background-color: #ffffff69;
-  transition: all 500ms ease-out;
-}
-
-.Submit {
-  color: white;
-  background: #27ae60;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background .25s ease;
-}
-.Submit:hover{
-  background: #1f7744;
-}
-.notice {
-font-size: 20px;
-color: #fff;
-bottom: 250px;
-padding: 20px;
-position: fixed;
-}
-.regist{
-  text-decoration: none;
-  color: white;
   position: fixed;
-  margin: 7rem 3.5rem;
-  text-align: center;
-  background: #27ae60;
-  width: 15rem;
-  line-height: 50px;
-  border-radius: 5px;
-  font-size: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
-.fa.fa-tasks{
-  color: #fff;
-  font-size: 50px;
-  margin: 8px 30px;
+.main{
+  width: 400px;
 }
-.page-name{
-  margin: 0 30px;
-  padding-bottom: 15px;
-}
-#list{
-  list-style: circle;
-}
-.Taskname, .Addtask{
-  display: block;
-  font-size: 20px;
-  line-height: 20px;
-  width: 28vh;
-}
-#alert{
-  color: #e74c3c;
-  width: 15rem;
-  margin: 7rem 0;
-  position: fixed;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 5px;
-}
-
 /*-------------------------------------------------------------------------*/
