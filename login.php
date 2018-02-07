@@ -1,5 +1,5 @@
 <?php
-  $bodyClass = "d-flex";  
+  $bodyClass = "d-flex";
   $title= "Log In";
   include 'includes/header.php';
   $db_user = '';
@@ -31,7 +31,7 @@
     if ($user === $db_user && $pass === $db_pass) {
       $_SESSION['ID'] = $db_id;
       $_SESSION['Username'] = $db_user;
-      header("Location: index.php");
+      header("Location: admin.php");
     }
     else {
       $errorMessage= "Wrong Username / Password!";
@@ -39,10 +39,10 @@
   }
  ?>
 <div  id="login">
-  <div class="img animated pulse">
+  <div class="img">
     <img src="LOGOforApp.svg" alt="">
   <form class="animated pulse" action="login.php" method="post">
-    <input class="Text" type="text" name="username" placeholder="Username" required>
+    <input class="Text" type="text" name="username" placeholder="Username" required autofocus>
     <input class="Pass" type="password" name="password" placeholder="Password" required>
     <input class="Submit" type="submit" name="login" value="Log In">
     <a href="register.php" class="regist">Register here</a>

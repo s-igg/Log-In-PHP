@@ -13,11 +13,11 @@ if (!empty($_POST)) {
   }
 }
  ?>
- <form class="later" action="delete.php" method="post">
+ <form class="later" action="admin.php" method="post">
    <input type="hidden" name="taskID" value="<? echo $taskID; ?>">
    <h2>Are You Sure?</h2>
    <input type="submit" name="deleteTask" value="Yes!">
-   <a href="index.php">No!</a>
+   <a href="admin.php">No!</a>
  </form>
 </body>
 </html>

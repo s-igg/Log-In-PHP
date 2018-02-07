@@ -36,7 +36,7 @@
     $taskID = $_POST['taskID'];
     $query = "DELETE FROM tasks WHERE id = $taskID";
     $deleteTaskQuery = mysqli_query($connection, $query);
-    header("Location: index.php");
+    header("Location: admin.php");
   }
   function editTask(){
     global $connection;
@@ -44,7 +44,18 @@
     $newText = $_POST['newTask'];
     $query = "UPDATE tasks SET title='$newText' WHERE id = '$taskID'";
     $updateTaskQuery = mysqli_query($connection, $query);
-    header("location: index.php");
+    header("location: admin.php");
   }
 
+  function IFs(){
+    global $title;
+    $lastLetter = substr($_SESSION['Username'], -1);
+
+    if (substr($lastLetter, -1) == 's' || substr($lastLetter, -1) == 'S') {
+      $title = $_SESSION['Username'];
+    }
+    else {
+      $title= $_SESSION['Username'] . "s" . " Tasks";
+    }
+  }
  ?>

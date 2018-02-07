@@ -1,8 +1,9 @@
 <?php
   include 'db.php';
   include 'function.php';
-
-  $title = "Welcome";
+  if (basename($_SERVER['PHP_SELF']) == "admin.php") {
+    IFs();
+  }
  ?>
 <!DOCTYPE html>
 <html>

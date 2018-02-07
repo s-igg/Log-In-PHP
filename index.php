@@ -1,6 +1,12 @@
 <?php
+$title = 'Welcome';
 $bodyClass = "d-flex justify-content-center align-items-center";
 include 'includes/header.php';
+
+
+$query = "SELECT ID FROM appdb";
+$result = mysqli_query($connection, $query);
+$num = mysqli_num_rows($result);
 ?>
 
 <!-- Background Video -->
@@ -10,11 +16,12 @@ include 'includes/header.php';
 <!-- Background Video End -->
 
 <!-- Main content -->
-<main class="main">
-  <img src="img/LOGOforApp.svg" alt="App">
-  <a href="login.php" class="btn btn-light">Log In</a>
-  <a href="register.php" class="btn btn-light">Register</a>
+<main class="col-12 col-sm-8 col-lg-4 main text-center">
+  <img class="img" src="img/LOGOforApp.svg" alt="App">
+  <p>Over <span><?php echo $num ?></span> users</p>
+  <a  href="login.php" class="A btn btn-outline-light">Log In</a>
+  <a  href="register.php" class="A btn btn-outline-light">Register</a>
 </main>
-<!-- Main content End -->
+
 
 <?php   include 'includes/footer.php';?>

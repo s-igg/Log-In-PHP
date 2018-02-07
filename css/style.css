@@ -1,9 +1,94 @@
-/*Layout*/
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
-@import url('https://fonts.googleapis.com/css?family=Kavivanar');
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Arvo|Kavivanar|Work+Sans|Francois+One');
+/*-------------------------------------------------------------------------*/
 
+/*Palette*/
+
+/*-------------------------------------------------------------------------*/
+
+/*Layout*/
 html, body{
   height: 100%;
+}
+body{
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #e74c3c, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #e74c3c, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*-------------------------------------------------------------------------*/
+
+/*Navbar*/
+.navbar-brand img{
+  height: auto;
+  width: 40px;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Splash Screen*/
+#splashScreen{
+  align-items: center;
+  background: radial-gradient(#414345, #232526);
+  background: -webkit-radial-gradient(#414345, #232526);
+  background: -o-radial-gradient(#414345, #232526);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#splashScreen:before {
+  animation: splashScreenAnimation 2.5s both;
+  content: '';
+  background: url(../img/LOGOforApp.svg) no-repeat center;
+  display: block;
+  height: 33.333333%;
+  width: 33.333333%;
+}
+#task{
+  background: #fff;
+  margin: 40px auto 0;
+  padding: 25px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 3px;
+}
+#splashScreen blockquote {
+/*  animation: splashScreenAnimation 2.49s both;
+  */margin: 0;
+}
+#quote, #author {
+  margin: 0;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+}
+#quote{
+  font-size: 18px;
+}
+#author{
+  font-size: 13px;
+  opacity: .75;
+}
+#quote:before ,#quote:after, #author:before {
+  display: inline-block;
+}
+#quote:before{
+  content: '“';
+  margin: 0 5px 0 0;
+}
+#quote:after{
+  margin: 0 0 0 5px;
+  content: '”';
+}
+#author:before{
+  margin: 0 5px 0 0;
+  content: '—';
+}
+.to-do , #task{
+  font-family: 'Kavivanar', sans-serif;
 }
 /*-------------------------------------------------------------------------*/
 
@@ -19,7 +104,44 @@ video{
   top: 0;
   z-index: -1;
 }
-.main{
-  width: 400px;
+p{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 88px;
+  margin-bottom: auto;
+}
+main p {
+  font-family: 'Arvo', serif;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+main p span{
+  font-weight: bold;
+  font-family: 'Francois One', sans-serif;
+
+}
+.main img{
+  margin: 0 auto 40px;
+}
+.A{
+  font-family: 'Work Sans', sans-serif;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Animation*/
+ @keyframes  splashScreenAnimation {
+ from {
+   opacity: 0;
+   transform: translate3d(0, -100%, 0);
+}
+ +75% {
+  opacity: 1;
+  transform: none;
+}
+to {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
 }
 /*-------------------------------------------------------------------------*/
