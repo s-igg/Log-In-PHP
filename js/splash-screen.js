@@ -15,7 +15,8 @@ $(document).ready(function(){
       author:"bb"
     }
   ];
-    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    var randomQuote = quotes[Math.floor(Math.random() * quotes.length
+    )];
 
     $('body').prepend('<header id="splashScreen"></header>');
     $('#splashScreen').prepend('<blockquote></blockquote>');
