@@ -1,5 +1,4 @@
 <?php
-  session_start();
   include 'includes/header.php';
 
     $taskName = $_REQUEST['taskName'];
@@ -7,12 +6,10 @@
     $Whateva = "Ändra " . $taskName . "?";
 
     if (isset($_POST['changeTask'])) {
-      if (isset($_SESSION['username'])){
         editTask();
-      }
     }
    ?>
-   <form action="admin.php" method="post">
+   <form action="edit.php" method="post">
      <input type="hidden" name="taskID" value="<?php echo $taskID; ?>">
      <h2>fghjkl</h2>
      <input type="text" name="newTask" placeholder="New Task Text" value="<?php echo $taskName; ?>">

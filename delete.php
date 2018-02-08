@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 $AreUsure = "U sure?";
 include 'includes/header.php';
@@ -8,12 +8,12 @@ if (!empty($_GET['taskID'])) {
   $taskID = $_REQUEST['taskID'];
 }
 if (!empty($_POST)) {
-  if (isset($_SESSION['username'])) {
+
     removeTask();
-  }
+
 }
  ?>
- <form class="later" action="admin.php" method="post">
+ <form class="later" action="delete.php" method="post">
    <input type="hidden" name="taskID" value="<? echo $taskID; ?>">
    <h2>Are You Sure?</h2>
    <input type="submit" name="deleteTask" value="Yes!">

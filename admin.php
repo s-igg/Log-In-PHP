@@ -10,7 +10,9 @@
 <?php if (isset($_SESSION['Username'])) : ?>
 
 <?php include "includes/nav.php"; ?>
-
+<video autoplay muted loop>
+  <source src="video/edited_1.mp4" type="video/mp4">
+</video>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <?php include "includes/task.php"; ?>
