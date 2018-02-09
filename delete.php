@@ -1,6 +1,5 @@
 <?php
 
-
 $AreUsure = "U sure?";
 include 'includes/header.php';
 

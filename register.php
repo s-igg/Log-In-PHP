@@ -1,5 +1,5 @@
 <?php
-  $bodyClass = "d-flex";
+  $bodyClass = "d-flex justify-content-center align-items-center";
   $title= "Register";
   include 'includes/header.php';
 
@@ -36,14 +36,24 @@
  ?>
  <div  id="login">
 
-  <form class="animated bounceIn" action="register.php" method="post">
-    <input class="Text" type="text" name="username" placeholder="Username" required>
-    <input class="Pass" type="password" name="password" placeholder="Password" required>
-    <input class="Submit" type="submit" name="register" value="Register">
-  </form>
-  <?php if(isset($taken)): ?>
-  <div id="alert" class="animated flash"><?php echo $taken; ?></div>
-  <?php endif; ?>
 </div>
+
+
+<form class="col-12 col-sm-8 col-lg-4" action="register.php" method="post">
+  <h3><?php echo $title; ?></h3>
+  <div class="form-group">
+    <input type="text" name="username" class="form-control" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" class="form-control" placeholder="Password">
+  </div>
+  <button type="submit" name="register" class="col-12 btn btn-primary">Register</button>
+</form>
+
+
+<?php if(isset($taken)): ?>
+  <div id="alert" class="animated flash"><?php echo $taken; ?></div>
+<?php endif; ?>
+<?php   include 'includes/footer.php';?>
 </body>
 </html>

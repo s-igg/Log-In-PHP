@@ -3,7 +3,7 @@
 
     $taskName = $_REQUEST['taskName'];
     $taskID = $_REQUEST['taskID'];
-    $Whateva = "Ändra " . $taskName . "?";
+    $title = "Ändra " . $taskName . "?";
 
     if (isset($_POST['changeTask'])) {
         editTask();

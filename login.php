@@ -1,5 +1,5 @@
 <?php
-  $bodyClass = "d-flex";
+  $bodyClass = "d-flex justify-content-center align-items-center";
   $title= "Log In";
   include 'includes/header.php';
   $db_user = '';
@@ -38,20 +38,23 @@
     }
   }
  ?>
-<div  id="login">
-  <div class="img">
-    <img src="LOGOforApp.svg" alt="">
-  <form class="animated pulse" action="login.php" method="post">
-    <input class="Text" type="text" name="username" placeholder="Username" required autofocus>
-    <input class="Pass" type="password" name="password" placeholder="Password" required>
-    <input class="Submit" type="submit" name="login" value="Log In">
-    <a href="register.php" class="regist">Register here</a>
-  </form>
-  <?php if($errorMessage): ?>
-  <div id="alert" class="animated flash"><?php echo $errorMessage; ?></div>
-  <?php endif; ?>
-</div>
-</div>
 
+<form class="col-12 col-sm-8 col-lg-4" action="login.php" method="post">
+  <h3><?php echo $title; ?></h3>
+  <div class="form-group">
+    <input type="text" name="username" class="form-control" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" class="form-control" placeholder="Password">
+  </div>
+  <button type="submit" name="login" class="col-12   btn btn-primary">Log in</button>
+  <a href="register.php" class="col-12 regist">Register here</a>
+</form>
+
+<?php if($errorMessage): ?>
+<div id="alert" class="animated flash"></?php echo $errorMessage; ?></div>
+<?php endif; ?>
+
+<?php   include 'includes/footer.php';?>
 </body>
 </html>
