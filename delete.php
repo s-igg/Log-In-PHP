@@ -7,9 +7,7 @@ if (!empty($_GET['taskID'])) {
   $taskID = $_REQUEST['taskID'];
 }
 if (!empty($_POST)) {
-
     removeTask();
-
 }
  ?>
  <form class="later" action="delete.php" method="post">

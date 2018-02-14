@@ -1,5 +1,16 @@
 <?php
-  $appName = "App";
+
+  // appName
+  function appName(){
+    return   "App ";
+  }
+
+  function countUsers(){
+    global $connection;
+    $query = "SELECT ID FROM appdb";
+    $result = mysqli_query($connection, $query);
+    return $num = mysqli_num_rows($result);
+  }
 
   function userIsExist($user){
     global $connection;
@@ -12,6 +23,73 @@
     }
     else {
       return false;
+    }
+  }
+
+  function loginUser(){
+    global $connection;
+
+    $db_user = '';
+    $db_pass = '';
+
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+
+    $user = mysqli_real_escape_string($connection, $user);
+    $pass = mysqli_real_escape_string($connection, $pass);
+
+    $query = "SELECT * FROM appdb WHERE Username = '{$user}' ";
+    $select_user_query = mysqli_query($connection, $query);
+
+    if (!$select_user_query) {
+      die('Query Failed') . mysqli_error($connection);
+    }
+    while ($row = mysqli_fetch_array($select_user_query)) {
+       $db_id = $row['ID'];
+       $db_user = $row['Username'];
+       $db_pass = $row['Password'];
+    }
+
+    $pass = crypt($pass, $db_pass);
+
+    if ($user === $db_user && $pass === $db_pass) {
+      $_SESSION['ID'] = $db_id;
+      $_SESSION['Username'] = $db_user;
+      header("Location: admin.php");
+    }
+    else {
+      return $errorMessage = "Wrong Username / Password!";
+    }
+  }
+
+  function registerUser(){
+    global $connection;
+
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+
+    $hashFormat = "$2y$10$";
+    $salt = "jagtestarmed22teckennu";
+
+    $hashAndSalt = $hashFormat . $salt;
+    $pass = crypt($pass, $hashAndSalt);
+
+    if (userIsExist($user)) {
+    return $taken = "Username is Taken!";
+    }
+    else {
+      $user = mysqli_real_escape_string($connection, $user);
+      $pass = mysqli_real_escape_string($connection, $pass);
+
+      $query = "INSERT INTO appdb(Username, Password) "; // <- Vart vi lägger in info
+      $query .= "VALUES ('$user', '$pass')"; // <- Vad vi lägger in
+
+      $result = mysqli_query($connection, $query);
+
+      if (!$result) {
+        die("Query failed") . mysqli_error($connection);
+      }
+      header("Location: login.php");
     }
   }
 
