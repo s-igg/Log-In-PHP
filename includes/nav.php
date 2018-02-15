@@ -16,13 +16,14 @@
           Account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Settings.php">Settings</a>
           <a class="dropdown-item" href="LogOut.php">Log Out <?php echo $_SESSION['Username']; ?></a>
         </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline myBtn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>

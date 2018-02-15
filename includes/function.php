@@ -48,6 +48,7 @@
        $db_id = $row['ID'];
        $db_user = $row['Username'];
        $db_pass = $row['Password'];
+       $db_profilepic = $row['ProfilePic'];
     }
 
     $pass = crypt($pass, $db_pass);
@@ -55,6 +56,7 @@
     if ($user === $db_user && $pass === $db_pass) {
       $_SESSION['ID'] = $db_id;
       $_SESSION['Username'] = $db_user;
+      $_SESSION['ProfilePic'] = $db_profilepic;
       header("Location: admin.php");
     }
     else {

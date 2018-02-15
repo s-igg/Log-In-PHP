@@ -9,9 +9,8 @@ REGISTRATION BLACK: #000000;
 ARSENIC: #414345;
 RAISIN BLACK: #232526;
 COSMIC COBALT: #312783;
-DARK PURPLE: 360033;
-METALLIC SEAWEED: 0B8793;
 DARK PURPLE: #360033;
+METALLIC SEAWEED: #0B8793;
 *//*-------------------------------------------------------------------------*/
 
 /*Layout*/
@@ -19,9 +18,9 @@ html, body{
   height: 100%;
 }
 body{
-  background: #360033;
-  background: -webkit-linear-gradient(to bottom, #0b8793, #360033);
-  background: linear-gradient(to bottom, #0b8793, #360033);
+  background: #582856 ;
+  background: -webkit-linear-gradient(to top  , #0b8793, #582856) ;
+  background: linear-gradient(to top  , #0b8793, #582856) ;
 }
 /*-------------------------------------------------------------------------*/
 
@@ -31,12 +30,20 @@ body{
   width: 40px;
 }
 .bg-light{
-  background: #117284 !important;
+  background: #582856 !important;
+  background: -webkit-linear-gradient(to bottom  , #0b8793, #582856) !important;
+  background: linear-gradient(to bottom  , #0b8793, #582856) !important;
 }
+.nav-item.active, a.nav-link, .navbar-light .navbar-nav .nav-link {
+  font-family: 'Work Sans', sans-serif;
+  color: #fff!important;
+}
+
 /*-------------------------------------------------------------------------*/
 
 /*Splash Screen*/
 #splashScreen{
+  animation: splashScreenAnimation 2.5s both;
   align-items: center;
   background: radial-gradient(#414345, #232526);
   background: -webkit-radial-gradient(#414345, #232526);
@@ -122,6 +129,58 @@ body{
 
 /*-------------------------------------------------------------------------*/
 
+/*profile header*/
+#profile-header{
+  background: #552b58;
+  height: 250px;
+  text-align: center;
+}
+#profile-header figure{
+  margin: 0 auto;
+  width: 150px;
+  position: relative;
+}
+#profile-header figure.away:before{
+  background: orange;
+}
+#profile-header figure.offline:before{
+  background: #a70000;
+}
+#profile-header figure:before{
+  content: '';
+  background: green;
+  display: block;
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  box-shadow: 2px 2px 4px 2px;
+  border: 2px #fff solid;
+}
+#profile-header figure img{
+  margin-top: 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+#profile-header h3{
+  font-family: 'Work Sans', sans-serif;
+
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+#profile-header figure .fa-user{
+  border-radius: 50%;
+  border: 2px solid black;
+  font-size: 120px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/*-------------------------------------------------------------------------*/
+
 /*Landing page*/
 .video{
   object-fit: cover;
@@ -194,6 +253,18 @@ main a:first-of-type{
    border-color: #000000;
    color: #0B8793;
  }
+button.btn.btn-outline{
+  background: #fff0;
+  border: 1px solid;
+}
+
+/*-------------------------------------------------------------------------*/
+
+/*Fix later*/
+.UglySolutFixlater {
+margin: 200px auto 0; 
+}
+
 /*-------------------------------------------------------------------------*/
 
 /*Animation*/

@@ -27,3 +27,7 @@ $(document).ready(function() {
     sessionStorage.setItem('splashScreen', 'true');
     }
   });
+
+
+
+//test
